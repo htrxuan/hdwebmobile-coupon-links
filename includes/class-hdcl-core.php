@@ -63,7 +63,7 @@ final class HDCL_Core
         ?>
         <div class="notice notice-error is-dismissible">
             <p>
-                <?php esc_html_e('HDWebmobile Coupon Links & Conditions requires WooCommerce to be installed and active. The plugin has been deactivated.', 'hdwebmobile-coupon-links'); ?>
+                <?php esc_html_e('HDWebmobile Coupon Links requires WooCommerce to be installed and active. The plugin has been deactivated.', 'hdwebmobile-coupon-links'); ?>
             </p>
         </div>
         <?php

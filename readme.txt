@@ -1,4 +1,4 @@
-=== HDWebmobile Coupon Links & Conditions ===
+=== HDWebmobile Coupon Links ===
 Contributors: htrxuan
 Donate link: https://paypal.me/htrxuan/20
 Tags: woocommerce, coupons, coupon url, cart conditions, discount link
@@ -14,16 +14,16 @@ Add cart conditions to any coupon, and share links that apply a coupon automatic
 
 == Description ==
 
-HDWebmobile Coupon Links & Conditions adds two things to WooCommerce's own coupons:
+HDWebmobile Coupon Links adds two things to WooCommerce's own coupons:
 
 **Cart conditions.** On any coupon's edit screen you can require the cart to contain a specific product, contain a product from a specific category, hold at least N items, or reach a minimum subtotal. If a condition is not met, the coupon is rejected at apply time with a clear message.
 
 **Apply-by-link.** Share a URL like `https://yourstore.com/?hdcl_coupon=SUMMER10` and the coupon is added to the visitor's cart automatically. Optionally append `&hdcl_redirect=/shop/` to send them somewhere afterwards.
 
-= Why this plugin exists =
+= Security by design =
 Coupon plugins are a repeated source of two problems, and this plugin is built so that neither can happen:
 
-* **No stored XSS from a coupon field.** "Advanced Coupons for WooCommerce" (up to and including 4.7.1.1) shipped a stored Cross-Site Scripting vulnerability where a value saved against a coupon was later rendered to storefront visitors without escaping. Here, conditions are edited only inside WooCommerce's own coupon-data panel (behind the `edit_shop_coupon` capability and WooCommerce's coupon nonce), **every stored value is a number** (product IDs, category IDs, a count, a subtotal -- there is no free-text condition field at all), and a condition never produces output: it only yields "met / not met", and the rejection message is built from translated strings and `wc_price()`, never from a stored value.
+* **No stored XSS from a coupon field.** A value saved against a coupon and later rendered to storefront visitors without escaping is a recurring source of stored Cross-Site Scripting in coupon tools. Here, conditions are edited only inside WooCommerce's own coupon-data panel (behind the `edit_shop_coupon` capability and WooCommerce's coupon nonce), **every stored value is a number** (product IDs, category IDs, a count, a subtotal -- there is no free-text condition field at all), and a condition never produces output: it only yields "met / not met", and the rejection message is built from translated strings and `wc_price()`, never from a stored value.
 * **A coupon link can only ever apply an existing, published coupon.** The `hdcl_coupon` value is normalised and looked up with `WC_Coupon`; if it does not resolve to a published coupon, nothing happens. The code is handed straight to WooCommerce's own `apply_coupon()`, so every usage rule (expiry, usage limits, minimum/maximum spend, allowed emails) plus the cart conditions above are still enforced. There is **no code path** that creates a coupon, edits one, or sets a discount amount. The endpoint is also rate-limited per visitor, and any redirect target is passed through `wp_validate_redirect()` (same-site only).
 
 = Key Features =

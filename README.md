@@ -1,4 +1,4 @@
-# HDWebmobile Coupon Links & Conditions
+# HDWebmobile Coupon Links
 
 Add cart conditions to any WooCommerce coupon, and share links that apply a coupon automatically. A coupon link only ever applies an existing published coupon by exact code — it can't create one or change a discount.
 

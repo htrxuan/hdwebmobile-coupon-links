@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: HDWebmobile Coupon Links & Conditions
+ * Plugin Name: HDWebmobile Coupon Links
  * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-coupon-links/
  * Description: Cart-condition coupons and apply-by-link URLs. A coupon link only ever applies an existing published coupon by exact code, and coupon conditions are edited only on the coupon screen.
  * Version: 1.0.0
