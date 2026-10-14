@@ -33,6 +33,9 @@ Coupon plugins are a repeated source of two problems, and this plugin is built s
 * No settings to save and no database table -- conditions live on the coupon, the link is just a URL
 * Works with WooCommerce's classic and block-based Cart and Checkout
 
+= Enjoying this plugin? =
+If it helps your site, please consider [leaving an honest review on WordPress.org](https://wordpress.org/support/plugin/hdwebmobile-coupon-links/reviews/#new-post) -- it helps other WordPress users find it. Found a problem or have an idea? Please [open a support topic](https://wordpress.org/support/plugin/hdwebmobile-coupon-links/) first so it can be fixed.
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-coupon-links` directory, or install the plugin through the WordPress plugins screen directly.
